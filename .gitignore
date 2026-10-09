@@ -7,10 +7,20 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Dependencies
 node_modules
+__pycache__
+*.pyc
+.venv
+venv/
+env/
+.eggs/
+
+# Build outputs
 dist
 dist-ssr
 *.local
+*.tsbuildinfo
 
 # Editor directories and files
 .vscode/*
@@ -21,15 +31,37 @@ dist-ssr
 *.ntvs*
 *.njsdb
 *.sw?
+*.swp
+*~
 
 # Environment variables (may contain secrets)
 .env
 .env.local
 .env.*.local
+.env.development
+.env.production
+*.pem
+*.key
 
-# Build output
-coverage
+# Expo / React Native
+.expo/
+.expo-shared/
+.expo-env.d.ts
+.expo-env.d.ts
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+
+# Python
+.mypy_cache
+.ruff_cache
+.pytest_cache
+.coverage
+htmlcov/
 .nyc_output
 
 # OS files
 Thumbs.db
+Desktop.ini

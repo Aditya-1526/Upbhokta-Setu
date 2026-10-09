@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "moduleResolution": "bundler",
+    "target": "esnext",
+    "jsx": "react-native",
+    "lib": ["dom", "esnext"],
+    "allowJs": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "useDefineForClassFields": true,
+    "alwaysStrict": true
+  },
+  "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts"],
+  "exclude": ["node_modules"]
+}
