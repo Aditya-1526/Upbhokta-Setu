@@ -39,9 +39,14 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware,
     allow_origins=settings.cors_origin_list,
+    allow_origin_regex=r"^http://(localhost|127\.0\.0\.1|192\.168\.\d+\.\d+|10\.\d+\.\d+\.\d+|172\.(1[6-9]|2\d|3[01])\.\d+\.\d+):\d+$"
+    if settings.app_env == "development"
+    else None,
     allow_credentials=True,
     allow_methods=["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     allow_headers=["*"],
+    expose_headers=["*"],
+    max_age=600,
 )
 
 
@@ -86,7 +91,8 @@ def api_health():
     return health()
 
 
-# --- Routers will be included here ---
-# from .routers import cases, grievances, evidence
-# app.include_router(cases.router, prefix=settings.api_prefix)
-# app.include_router(grievances.router, prefix=settings.api_prefix)
+# --- Routers ---
+from .routers import cases, drafts
+
+app.include_router(cases.router, prefix=settings.api_prefix)
+app.include_router(drafts.router, prefix=settings.api_prefix)

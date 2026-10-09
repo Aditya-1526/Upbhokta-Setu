@@ -6,6 +6,7 @@ export default function RootLayout() {
     <LanguageProvider>
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="case-detail" options={{ title: "Case Details" }} />
       </Stack>
     </LanguageProvider>
   );

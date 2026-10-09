@@ -22,6 +22,11 @@ dist-ssr
 *.local
 *.tsbuildinfo
 
+# Package manager lock files (do not commit — regenerate with npm install)
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

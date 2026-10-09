@@ -21,6 +21,8 @@ class Settings(BaseSettings):
     cors_origins: str = "http://localhost:8081,http://localhost:19000,http://localhost:19006"
 
     log_level: str = "info"
+    ai_request_timeout_seconds: float = 30.0
+    gemini_model: str = "gemini-3.8-flash"
 
     @property
     def cors_origin_list(self) -> list[str]:
